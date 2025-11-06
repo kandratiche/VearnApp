@@ -28,7 +28,13 @@ With a clean design and smooth browsing experience, Vearn makes it easy to disco
 
 ## 📱 Screenshots
 
-_Coming soon_
+
+<p align="center">
+  <img src="./screenshots/HomePage.png" alt="Homepage Screenshot" width="500"/>
+  <img src="./screenshots/DetailsPage.png" alt="Details Screenshot" width="500"/>
+  <img src="./screenshots/RegisterPage.png" alt="Register Page Screenshot" width="500"/>
+</p>
+
 
 ---
 
