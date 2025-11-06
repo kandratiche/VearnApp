@@ -30,9 +30,9 @@ With a clean design and smooth browsing experience, Vearn makes it easy to disco
 
 
 <p align="center">
-  <img src="./screenshots/HomePage.png" alt="Homepage Screenshot" width="500"/>
-  <img src="./screenshots/DetailsPage.png" alt="Details Screenshot" width="500"/>
-  <img src="./screenshots/RegisterPage.png" alt="Register Page Screenshot" width="500"/>
+  <img src="./screenshots/HomePage.png" alt="Homepage Screenshot" height="250"/>
+  <img src="./screenshots/DetailsPage.png" alt="Details Screenshot" height="250"/>
+  <img src="./screenshots/RegisterPage.png" alt="Register Page Screenshot" height="250"/>
 </p>
 
 
