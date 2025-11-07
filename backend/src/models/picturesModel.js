@@ -2,7 +2,8 @@ import mongoose from 'mongoose';
 
 const picturesSchema = new mongoose.Schema({
     authorId: {
-        type: String, 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
         required: true,
     },
     title: { 
@@ -18,4 +19,5 @@ const picturesSchema = new mongoose.Schema({
         default: Date.now }
 });
 
-module.exports = mongoose.model('Picture', picturesSchema);
+const Picture = mongoose.model('Picture', picturesSchema);
+export default Picture;

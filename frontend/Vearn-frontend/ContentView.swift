@@ -89,3 +89,7 @@ struct ContentView: View {
         }.resume()
     }
 }
+
+#Preview {
+    ContentView()
+}
