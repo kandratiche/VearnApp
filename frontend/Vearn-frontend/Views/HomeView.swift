@@ -38,28 +38,32 @@ struct HomeView: View {
                     }
 
                 ScrollView {
-                    LazyVGrid(columns: columns, spacing: 10) {
-                        ForEach(filteredPosts) { post in
-                            NavigationLink(destination: PostDetailsView(post: post)) {
-                                VStack {
-                                    AsyncImage(url: URL(string: post.imageUrl)) { image in
-                                        image
-                                            .resizable()
-                                            .scaledToFill()
-                                    } placeholder: {
-                                        ProgressView()
+                    if(filteredPosts.isEmpty) {
+                        Text("Loading...")
+                    } else {
+                        LazyVGrid(columns: columns, spacing: 10) {
+                            ForEach(filteredPosts) { post in
+                                NavigationLink(destination: PostDetailsView(post: post)) {
+                                    VStack {
+                                        AsyncImage(url: URL(string: post.imageUrl)) { image in
+                                            image
+                                                .resizable()
+                                                .scaledToFill()
+                                        } placeholder: {
+                                            ProgressView()
+                                        }
+                                        .frame(width: 175, height: 300)
+                                        .background(Color.gray.opacity(0.2))
+                                        .clipped()
+                                        .cornerRadius(14)
                                     }
-                                    .frame(width: 175, height: 300)
-                                    .background(Color.gray.opacity(0.2))
-                                    .clipped()
-                                    .cornerRadius(14)
+                                    .background(Color.blue.opacity(0.1))
                                 }
-                                .background(Color.blue.opacity(0.1))
                             }
                         }
+                        .padding(.top)
+                        .padding(.horizontal)
                     }
-                    .padding(.top)
-                    .padding(.horizontal)
                 }
                 .frame(maxHeight: .infinity)
             }
