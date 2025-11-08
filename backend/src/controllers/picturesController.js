@@ -21,6 +21,24 @@ export const getPostsById = async (req, res) => {
         res.status(500).json({ message: "Error fetching picture", error: error.message });
     }
 }
+export const getPostsByTitle = async (req, res) => {
+    try {
+        const { title } = req.params;
+
+        const words = title.split(/\s+/);
+      
+        const regexQueries = words.map(word => ({
+            title: { $regex: word, $options: 'i' } 
+        }));
+
+        const pictures = await Picture.find({ $or: regexQueries });
+        console.log(pictures)
+        res.status(200).json(pictures);
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching pictures by title", error: error.message });
+    }
+}
+
 
 export const createPost = async (req, res) => {
     try {

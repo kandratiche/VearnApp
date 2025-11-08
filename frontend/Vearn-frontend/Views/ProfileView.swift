@@ -8,10 +8,10 @@ struct ProfileView: View {
         NavigationStack {
             VStack {
                 HStack {
-                    Image("person")
+                    Image(systemName: "person.circle.fill")
                         .resizable()
                         .frame(width: 100, height: 100)
-                        .background(Color.black).opacity(0.2)
+                        .foregroundColor(.gray)
                         .cornerRadius(50)
                     VStack {
                         Text("John Doe")
@@ -28,20 +28,18 @@ struct ProfileView: View {
                         Text("My Works")
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(selectedButton == "My Works" ? Color.blue : Color.gray.opacity(0.3))
-                            .foregroundColor(selectedButton == "My Works" ? .white : .black)
+                            .background(selectedButton == "My Works" ? Color.blue : Color(UIColor.systemGray5))
+                            .foregroundColor(selectedButton == "My Works" ? .white : Color.primary)
                             .cornerRadius(10)
                     }
-
-                    // Button 2
                     Button(action: {
                         selectedButton = "Favorites"
                     }) {
                         Text("Favorites")
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(selectedButton == "Favorites" ? Color.blue : Color.gray.opacity(0.3))
-                            .foregroundColor(selectedButton == "Favorites" ? .white : .black)
+                            .background(selectedButton == "Favorites" ? Color.blue : Color(UIColor.systemGray5))
+                            .foregroundColor(selectedButton == "Favorites" ? .white : Color.primary)
                             .cornerRadius(10)
                     }
                 }

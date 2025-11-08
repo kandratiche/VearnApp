@@ -80,29 +80,28 @@ struct HomeView: View {
 
     private func fetchPosts() {
         guard let url = URL(string: "https://vearnapp.onrender.com/posts") else {
-            print("❌ Invalid URL")
+            print("Invalid URL")
             return
         }
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-                print("❌ Request error: \(error.localizedDescription)")
+                print("Request error: \(error.localizedDescription)")
                 return
             }
 
             guard let data = data else {
-                print("❌ No data received")
+                print("No data received")
                 return
             }
 
             do {
                 let decoded = try JSONDecoder().decode([Post].self, from: data)
-                print("✅ Decoded \(decoded.count) posts")
                 DispatchQueue.main.async {
                     self.posts = decoded
                 }
             } catch {
-                print("❌ JSON decoding error: \(error)")
+                print("JSON decoding error: \(error)")
                 print("Raw response:\n\(String(data: data, encoding: .utf8) ?? "N/A")")
             }
         }.resume()
